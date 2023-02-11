@@ -1,0 +1,228 @@
+@font-face {
+  font-family: INFECTED;
+  src: url(assets/fonts/INFECTED.ttf);
+}
+:root {
+  font-size: 16px;
+}
+
+/* Josh Comeau's css reset */
+/* 1. Use a more-intuitive box-sizing model.*/
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+/* 2. Remove default margin*/
+* {
+  margin: 0;
+}
+/*  3. Allow percentage-based heights in the application */
+html,
+body {
+  height: 100%;
+}
+/*  Typographic tweaks!
+  4. Add accessible line-height
+  5. Improve text rendering
+*/
+body {
+  line-height: 1.5;
+  -webkit-font-smoothing: antialiased;
+}
+/*  6. Improve media defaults */
+img,
+picture,
+video,
+canvas,
+svg {
+  display: block;
+  max-width: 100%;
+}
+/*  7. Remove built-in form typography styles */
+input,
+button,
+textarea,
+select {
+  font: inherit;
+}
+/*  8. Avoid text overflows */
+p,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  overflow-wrap: break-word;
+}
+/*  9. Create a root stacking context */
+#root,
+#__next {
+  isolation: isolate;
+}
+
+/* general styling */
+
+body {
+  text-align: center;
+  background-color: black;
+  background-image: url(assets/images/concert.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  max-width: 700px;
+  margin: auto;
+}
+
+.head-text {
+  margin: auto;
+  align-items: center;
+  justify-content: center;
+  padding-top: 3em;
+  padding-bottom: 2em;
+}
+
+.heading {
+  font-size: 5rem;
+  color: black;
+  font-family: INFECTED;
+  letter-spacing: 0.25em;
+  line-height: 0.7;
+}
+
+.drumImg {
+  margin: auto;
+  background-image: url(assets/images/drumImg.png);
+  background-repeat: no-repeat;
+  background-size: contain;
+  height: 100px;
+  width: 100px;
+}
+
+.move {
+  transform: scale(120%, 120%);
+}
+
+.drum {
+  border: 10px solid #404b69;
+  font-size: 2rem;
+  font-family: "Arvo", cursive;
+  font-weight: 400;
+  outline: none;
+  line-height: 4;
+  color: #da0463;
+  text-shadow: 3px 0 #9ab9c4;
+  border-radius: 15px;
+  display: inline-block;
+  width: 100px;
+  height: 100px;
+  text-align: center;
+  margin: 10px;
+  background-color: white;
+  background-size: contain;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+.w {
+  background-image: url(assets/images/snare.webp);
+}
+.a {
+  background-image: url(assets/images/tom-1.webp);
+}
+.s {
+  background-image: url(assets/images/tom-2.webp);
+}
+.d {
+  background-image: url(assets/images/tom-3.webp);
+}
+.j {
+  background-image: url(assets/images/tom-4.webp);
+}
+.k {
+  background-image: url(assets/images/kick.webp);
+}
+.l {
+  background-image: url(assets/images/crash.webp);
+}
+
+/* .game-over {
+  background-color: red;
+  opacity: 0.8;
+} */
+
+.pressed {
+  background-color: #f11f1f;
+  box-shadow: 0 3px 4px 0 #dbedf3;
+  opacity: 0.5;
+  transform: translate(4px, 4px);
+  border-color: green;
+}
+
+footer,
+a {
+  font-family: "Times New Roman", Times, serif;
+  text-transform: uppercase;
+  text-decoration: none;
+  color: #dbedf3;
+  letter-spacing: 0.25em;
+  padding-top: 3em;
+}
+
+/* media queries */
+@media screen and (min-width: 600px) {
+  .heading {
+    font-size: 6rem;
+  }
+  .drum {
+    font-size: 3rem;
+    line-height: 4.5;
+    width: 150px;
+    height: 150px;
+  }
+  .drumImg {
+    width: 150px;
+    height: 150px;
+  }
+}
+
+/* Animation */
+
+.letters {
+  color: green;
+  animation: chara 2s linear;
+  font-weight: 900;
+}
+
+@keyframes chara {
+  90% {
+    font-weight: 900;
+  }
+}
+
+.click {
+  animation: glitch 1s linear;
+  text-shadow: -3px -3px #008000b1, 3px 3px #da0424ac;
+}
+
+@keyframes glitch {
+  2%,
+  64% {
+    transform: translate(2px, 0) skew(0deg);
+  }
+  4%,
+  60% {
+    transform: translate(-2px, 0) skew(0deg);
+  }
+  62% {
+    transform: translate(0, 0) skew(5deg);
+  }
+}

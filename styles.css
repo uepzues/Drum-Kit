@@ -112,7 +112,7 @@ body {
 }
 
 .drum {
-  border: 10px solid #404b69;
+  border: 10px solid #42495e;
   font-size: 2rem;
   font-family: "Arvo", cursive;
   font-weight: 400;
@@ -126,7 +126,7 @@ body {
   height: 100px;
   text-align: center;
   margin: 10px;
-  background-color: white;
+  background-color: #a89554cf;
   background-size: contain;
   background-position: center;
   background-repeat: no-repeat;

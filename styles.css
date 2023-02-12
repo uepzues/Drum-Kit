@@ -177,10 +177,9 @@ a {
   padding-top: 3em;
 }
 
-/* media queries */
+/* media query */
 @media screen and (min-width: 600px) {
   .heading {
-    border: 3px solid green;
     font-size: 6rem;
     padding-bottom: .125em;
   }
@@ -197,11 +196,10 @@ a {
 }
 
 /* Animation */
-
 .letters {
   color: green;
   animation: chara 2s linear;
-  font-weight: 900;
+  font-weight: 700;
 }
 
 @keyframes chara {

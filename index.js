@@ -1,5 +1,6 @@
 const drums = document.querySelectorAll(".drum");
 
+//on mouse click
 drums.forEach(function (element) {
   element.addEventListener("click", function () {
     const drumClick = this.innerHTML;
@@ -9,6 +10,7 @@ drums.forEach(function (element) {
   });
 });
 
+//on keypress
 document.addEventListener("keydown", function (event) {
   if (event.key) {
     playDrum(event.key);

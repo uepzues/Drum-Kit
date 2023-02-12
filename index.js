@@ -3,16 +3,18 @@ const drums = document.querySelectorAll(".drum");
 drums.forEach(function (element) {
   element.addEventListener("click", function () {
     const drumClick = this.innerHTML;
-    beat(drumClick);
+    playDrum(drumClick);
     btnAnim(drumClick);
     glitch(drumClick);
   });
 });
 
 document.addEventListener("keydown", function (event) {
-  beat(event.key);
-  btnAnim(event.key);
-  glitch(event.key);
+  if (event.key) {
+    playDrum(event.key);
+    btnAnim(event.key);
+    glitch(event.key);
+  }
 });
 
 // animation for title
@@ -22,57 +24,50 @@ function glitch() {
 
   image.classList.add("move");
   header.classList.add("click");
-  setTimeout(function () {
+  setTimeout(() => {
     header.classList.remove("click");
     image.classList.remove("move");
   }, 250);
 }
 
 //button animation
-function btnAnim(currentKey) {
-  const btn = document.querySelector("." + currentKey);
+function btnAnim(key) {
+  const btn = document.querySelector(`.${key}`);
 
   if (btn) {
     btn.classList.add("pressed", "letters");
-    setTimeout(function () {
+    setTimeout(() => {
       btn.classList.remove("pressed", "letters");
     }, 250);
   }
 }
 
 // audio when pressed
+function playDrum(key) {
+  const drumSound = beat(key);
+  if (drumSound) {
+    const audio = new Audio(`assets/audio/${drumSound}.mp3`);
+    audio.play();
+  }
+}
+
 function beat(key) {
   switch (key) {
     case "w":
-      let audioW = new Audio("assets/audio/snare.mp3");
-      audioW.play();
-      break;
+      return "snare";
     case "a":
-      let audioA = new Audio("assets/audio/tom-1.mp3");
-      audioA.play();
-      break;
+      return "tom-1";
     case "s":
-      let audioS = new Audio("assets/audio/tom-2.mp3");
-      audioS.play();
-      break;
+      return "tom-2";
     case "d":
-      let audioD = new Audio("assets/audio/tom-3.mp3");
-      audioD.play();
-      break;
+      return "tom-3";
     case "j":
-      let audioJ = new Audio("assets/audio/tom-4.mp3");
-      audioJ.play();
-      break;
+      return "tom-4";
     case "k":
-      let audioK = new Audio("assets/audio/kick.mp3");
-      audioK.play();
-      break;
+      return "kick";
     case "l":
-      let audioL = new Audio("assets/audio/crash.mp3");
-      audioL.play();
-      break;
-
+      return "crash";
     default:
-      return false;
+      return null;
   }
 }

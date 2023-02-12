@@ -180,7 +180,9 @@ a {
 /* media queries */
 @media screen and (min-width: 600px) {
   .heading {
+    border: 3px solid green;
     font-size: 6rem;
+    padding-bottom: .125em;
   }
   .drum {
     font-size: 3rem;
